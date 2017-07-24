@@ -1,0 +1,27 @@
+{% from "_render_field.html" import render_field %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Flask WTF Login</h1>
+    <form class="" action="{{ url_for('form')}}" method="POST">
+      {{ form.csrf_token }}
+
+      {{ render_field(form.username)}}
+
+      {{ render_field(form.password)}}
+
+      {{ form.recaptcha }}
+      {% for error in form.recaptcha.errors %}
+      <ul>
+        <li style="color:red">{{ error }}</li>
+      </ul>
+      {% endfor %}
+      <input type="submit" name="" value="Submit">
+    </form>
+  </body>
+</html>

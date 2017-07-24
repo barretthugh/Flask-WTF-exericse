@@ -1,0 +1,19 @@
+{% from "_render_field_bootstrap.html" import render_text_field, render_radio_field %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flask WTF Login Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  </head>
+  <body>
+    <div class="">
+      <h1>Email: {{ email }}</h1>
+      <h1>Password: {{ password }}</h1>
+      <h1>TextArea: {{ textarea }}</h1>
+      <h1>Radios: {{ radios }}</h1>
+      <h1>Select: {{ selects }}</h1>
+    </div>
+  </body>
+</html>
